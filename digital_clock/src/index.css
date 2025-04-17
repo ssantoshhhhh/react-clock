@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body, html, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/* === Glowing Particles Background === */
+.App::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00ffc3 0%, transparent 60%) 10% 20%,
+              radial-gradient(circle, #f0f 0%, transparent 60%) 80% 30%,
+              radial-gradient(circle, #0ff 0%, transparent 60%) 50% 80%;
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  animation: moveBackground 20s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(50px);
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(50px, -100px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* === Clock Container === */
+.clock-container {
+  z-index: 2;
+}
+
+.glass-box {
+  padding: 40px 60px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Time and Date === */
+.time {
+  font-size: 4rem;
+  margin: 0;
+  color: var(--text-color);
+  text-shadow: 0 0 15px var(--glow-color);
+}
+
+.date {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--text-color-light);
+}
+
+/* === Theme Toggle Button === */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #0ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-toggle:hover {
+  background: #00ffc3;
+  color: #000;
+  box-shadow: 0 0 20px #00ffc3;
+}
+
+/* === DARK THEME === */
+.dark {
+  --bg-color: #000;
+  --text-color: #00ffc3;
+  --text-color-light: #ffffffcc;
+  --glow-color: #00ffc3;
+  background-color: var(--bg-color);
+}
+
+/* === LIGHT THEME === */
+.light {
+  --bg-color: #fff;
+  --text-color: #0e0e0e;
+  --text-color-light: #333333aa;
+  --glow-color: #000;
+  background-color: var(--bg-color);
+}
+
+.light .glass-box {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.light .theme-toggle {
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  box-shadow: 0 0 8px #aaa;
+}
