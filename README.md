@@ -34,15 +34,14 @@ digital-clock/
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/ssantoshhhhh/react-clock.git
+Download the zip file of code or clone it to your system
 cd digital-clock
 
-2 Install dependencies:
+2. Install dependencies:
 
 npm install
 
-3 Start the app:
+3. Start the app:
 
 npm start
 
