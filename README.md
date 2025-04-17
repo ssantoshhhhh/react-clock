@@ -35,7 +35,7 @@ digital-clock/
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/ssantoshhhhh/react-clock.git]
+git clone https://github.com/ssantoshhhhh/react-clock.git
 cd digital-clock
 
 2 Install dependencies:
